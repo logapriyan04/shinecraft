@@ -1,162 +1,116 @@
-import React, { useState } from "react";
-import Icons from "../Assests/images/icon_01.png";
-import Icons1 from "../Assests/images/icon_02 (1).png";
-import Icons2 from "../Assests/images/icon_03.png";
-import Icons3 from "../Assests/images/icon_04.png";
-import NextIcon from "../Assests/images/navigation_arrows_right.svg";
+import React from "react";
+import Projectleft from "../Assests/images/icon1.png";
+import Projectcenter from "../Assests/images/coding.png";
+import Projectright from "../Assests/images/deep-learning.png";
+import Projectleft1 from "../Assests/images/chatbot.png";
+import Projectcenter1 from "../Assests/images/solution.png";
+import Projectright1 from "../Assests/images/design.png";
+import Projectleft2 from "../Assests/images/icon6.png";
+import Projectcenter2 from "../Assests/images/database.png";
+import Projectright2 from "../Assests/images/icon8.png";
+
+const ServiceData = [
+  {
+    id: "1",
+    name: "MOBILE APP",
+    image: Projectleft,
+    para: `We create responsive, user-friendly, and feature-rich mobile
+  applications for both Android and iOS platforms.`,
+  },
+  {
+    id: "2",
+    name: "WEBSITE",
+    image: Projectcenter,
+    para: `We develop everything from simple landing pages to complex web applications. Framework like PHP, HTML, Angular, React js and three. `,
+  },
+  {
+    id: "3",
+    name: "MACHINE LEARNING AND DEEP LEARNING ",
+    image: Projectright,
+    para: `We develop algorithms and models that help businesses make data-driven decisions,  and predict future trends.`,
+  },
+  {
+    id: "1",
+    name: "CHABOT AND GENERATIVE AI",
+    image: Projectleft1,
+    para: `We develop intelligent chatbots and generative AI solutions that enhance customer engagement and streamline operations.`,
+  },
+  {
+    id: "2",
+    name: "CHROME EXTENSIONS",
+    image: Projectcenter1,
+    para: `Boost productivity and add new functionality to web browsers with our custom Chrome extensions.`,
+  },
+  {
+    id: "3",
+    name: "UI/UX AND LOGO BRANDING",
+    image: Projectright1,
+    para: `We create responsive, user-friendly, and feature-rich mobile
+    applications for both Android and iOS platforms.`,
+  },
+  {
+    id: "1",
+    name: "3D MODELING",
+    image: Projectleft2,
+    para: `We create detailed and accurate 3D models for various applications, including product design,  and architectural visualization.`,
+  },
+  {
+    id: "2",
+    name: "BACKEND  AND CLOUD",
+    image: Projectcenter2,
+    para: `WOur services include API development, database management, and cloud migration.`,
+  },
+  {
+    id: "3",
+    name: "IOT PRODUCTS",
+    image: Projectright2,
+    para: `From smart home solutions to industrial IoT applications, our expertise covers a wide range of IoT technologies and use cases. `,
+  },
+];
 
 function Services() {
-  const [nextPage, setNextPage] = useState(false);
   return (
-    <div className="Services">
-      <div className="Block-content">
-        <div
-          class="section-title-holder left is_stuck"
-          style={{ position: "sticky", top: "74px", width: "370px" }}
-        >
-          <div className="Services-num">
-            <span>01</span>
-            <h2 className="Services-title">Services</h2>
-          </div>
-        </div>
-        <div class="section-content-holder right">
-          <div class="content-wrapper">
+    <div className="service" id="service">
+      <h4>SERVICES</h4>
+      <div className="service-heading">
+        <h2>
+          OUR VALUABLE <br />
+          <span>SERVICES</span>
+        </h2>
+      </div>
+      <div className="service-para">
+        <div className="vertical-line"></div>
+        <p>
+          Shine Craft Technologies is a cutting-edge company,
+          <br />
+          dedicated to brighten the future through innovative
+          <br />
+          technology and exceptional craftsmanship. <br />
+          We specialize to provide a comprehensive range of services
+          <br />
+          and products designed to help businesses and individuals <br />
+          to thrive in the digital age.
+        </p>
+      </div>
+      <div className="horizontal-line"></div>
+      <div className="service-page1">
+        {ServiceData.map((item) => (
+          <div className="iconsimg" key={item.id}>
             <img
-              src={NextIcon}
-              alt="Next Icon"
-              onClick={() => setNextPage(!nextPage)}
+              src={item.image}
+              alt="serviceImage"
+              className="serviceicons"
+              height={"90px"}
+              width={"90px"}
             />
-            <div class="image-slider-wrapper relative service slider1">
-              <div
-                class="caroufredsel_wrapper"
-                style={{
-                  display: "block",
-                  textAlign: "start",
-                  float: "none",
-                  position: "relative",
-                  inset: "auto",
-                  Zindex: "auto",
-                  width: "680px",
-                  height: "390px",
-                  margin: "0px",
-                  overflow: "hidden",
-                  cursor: "move",
-                }}
-              >
-                <ul
-                  id="slider1"
-                  class="image-slider slides"
-                  style={{
-                    textAlign: "left",
-                    float: "none",
-                    position: "absolute",
-                    inset: "0px auto auto 0px",
-                    margin: "0px",
-                    width: "3400px",
-                    height: "390px",
-                  }}
-                >
-                  {!nextPage ? (
-                    <li style={{ width: "680px" }}>
-                      <div class="service-holder ">
-                        <img src={Icons} alt=""></img>
-                        <div class="service-content-holder">
-                          <div class="service-title">BRANDING</div>
-                          <div class="service-content">
-                            Donecos arem ipsum sit amet consectetur adipisicing
-                            elit sed eiusmod tempor incididunt ut donecos dolore
-                            ipsum temporest.<br></br>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="service-holder ">
-                        <img src={Icons1} alt=""></img>
-                        <div class="service-content-holder">
-                          <div class="service-title">MOBILE APPS</div>
-                          <div class="service-content">
-                            Disum lorem sit amet consectetur adipisicing elit
-                            sed eiusmod tempor incididunt ut donecos dolore
-                            ipsum temporest.<br></br>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="service-holder ">
-                        <img src={Icons2} alt=""></img>
-                        <div class="service-content-holder">
-                          <div class="service-title">WEB</div>
-                          <div class="service-content">
-                            Polor sit amet consectetur adipisicing elit sed
-                            eiusmod tempor incididunt ut dolore magna labore
-                            eiusmod.<br></br>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="service-holder ">
-                        <img src={Icons3} alt=""></img>
-                        <div class="service-content-holder">
-                          <div class="service-title">GRAPHIC</div>
-                          <div class="service-content">
-                            Cadipisicing elit sed eiusmod tempor incididunt ut
-                            labore lorem ipsum dolor sit amet consectetur lorem
-                            ipsum dolor sit amet.<br></br>
-                          </div>
-                        </div>
-                      </div>
-                    </li>
-                  ) : (
-                    <li style={{ width: "680px" }}>
-                      <div class="service-holder ">
-                        <img src={Icons} alt=""></img>
-                        <div class="service-content-holder">
-                          <div class="service-title">SERVICES</div>
-                          <div class="service-content">
-                            Donecos arem ipsum sit amet consectetur adipisicing
-                            elit sed eiusmod tempor incididunt ut donecos dolore
-                            ipsum temporest.<br></br>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="service-holder ">
-                        <img src={Icons} alt=""></img>
-                        <div class="service-content-holder">
-                          <div class="service-title">PSD</div>
-                          <div class="service-content">
-                            Disum lorem sit amet consectetur adipisicing elit
-                            sed eiusmod tempor incididunt ut donecos dolore
-                            ipsum temporest.<br></br>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="service-holder ">
-                        <img src={Icons} alt=""></img>
-                        <div class="service-content-holder">
-                          <div class="service-title">HTML</div>
-                          <div class="service-content">
-                            Polor sit amet consectetur adipisicing elit sed
-                            eiusmod tempor incididunt ut dolore magna labore
-                            eiusmod.<br></br>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="service-holder ">
-                        <img src={Icons} alt=""></img>
-                        <div class="service-content-holder">
-                          <div class="service-title">PHP</div>
-                          <div class="service-content">
-                            Cadipisicing elit sed eiusmod tempor incididunt ut
-                            labore lorem ipsum dolor sit amet consectetur lorem
-                            ipsum dolor sit amet.<br></br>
-                          </div>
-                        </div>
-                      </div>
-                    </li>
-                  )}
-                </ul>
-              </div>
-              <div class="clear"></div>
+            <div>
+              <span className="service-name">{item.name}</span>
+            </div>
+            <div className="content-para">
+              <p>{item.para}</p>
             </div>
           </div>
-        </div>
+        ))}
       </div>
     </div>
   );

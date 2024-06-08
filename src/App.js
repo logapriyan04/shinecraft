@@ -5,6 +5,7 @@ import About from "./Components/About";
 import Portfolio from "./Components/Portfolio";
 import Video from "./Components/Video";
 import Contact from "./Components/Contact";
+import Footer from "./Components/Footer";
 
 import "./Styles/Style.css";
 import "./App.css";
@@ -14,11 +15,13 @@ function App() {
     <div className="App">
       <Header />
       <Home />
-      <Services />
       <About />
+      <Services />
       <Portfolio />
+
       <Video />
       <Contact />
+      <Footer />
     </div>
   );
 }

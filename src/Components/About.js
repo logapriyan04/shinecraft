@@ -1,24 +1,25 @@
 import React from "react";
+import { PiShootingStarLight } from "react-icons/pi";
 function About() {
   return (
-    <div className="About">
-      <div className="Block-content-1">
-        <div class="about-num">
-          <span>02</span>
+    <div className="About" id="About">
+      <div className="about-heading">
+        <h3>WHO WE ARE</h3>
 
-          <h2 class="about-title">ABOUT</h2>
-        </div>
-        <div className="About-content">
-          <h1>ABOUT</h1>
-
-          <p>
-            Shine Craft Technologies is a cutting-edge company, dedicated to
-            brighten the future through innovative technology and exceptional
-            craftsmanship. <br></br>We specialize to provide a comprehensive
-            range of services and products designed to help businesses and
-            individuals to thrive in the digital age.
-          </p>
-        </div>
+        <h2>
+          WE CRAFT AWESOME <br></br>WEB AND APP SOLUTIONS{" "}
+        </h2>
+        <PiShootingStarLight className="star-light" />
+      </div>
+      <div className="about-para">
+        <div className="vertical-line"></div>
+        <p>
+          Shine Craft Technologies is a cutting-edge company,<br></br> dedicated
+          to brighten the future through innovative<br></br> technology and
+          exceptional craftsmanship. <br></br>We specialize to provide a
+          comprehensive range of services<br></br> and products designed to help
+          businesses and individuals <br></br>to thrive in the digital age.
+        </p>
       </div>
     </div>
   );

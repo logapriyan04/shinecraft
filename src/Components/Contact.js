@@ -1,86 +1,76 @@
-import React from "react";
-function Contact() {
-  return (
-    <div className="Contact">
-      <div className="Block-content-4">
-        <div class="Contact-num">
-          <span>05</span>
+import React, { useState } from "react";
+import { BsArrowUpRight } from "react-icons/bs";
 
-          <h2 class="Contact-title">CONTACT</h2>
-        </div>
-        <div className="contact-content-holder">
-          <div class="contact-content-wrapper">
-            <div class="one_half ">
-              <p>
-                Consectetur adipisicing elit sed eiusmod tempor incididunt ut
-                dolore magna labore eiusmod. Lorem ipsum dolor sit amet
-                consectetur est adipisicing elit, sed do eiusmod tempor.
-              </p>
-              <br></br>
-              <p>
-                <strong>
-                  <span style={{ color: "#e64b77" }}>Incididunt ut dolore</span>
-                </strong>{" "}
-                magna labore eiusmod. Dolor sit amet consectetur est adipisicing
-                elit, sed do eiusmod.
-              </p>
-            </div>
-            <div class="one_half last">
-              <div class="contact-form">
-                <p>
-                  <input
-                    id="name"
-                    type="text"
-                    name="your-name"
-                    placeholder="Name"
-                  ></input>
-                </p>
-                <p>
-                  <input
-                    id="contact-email"
-                    type="email"
-                    name="your-email"
-                    placeholder="Email"
-                  ></input>
-                </p>
-                <p>
-                  <input
-                    id="subject"
-                    type="text"
-                    name="your-subject"
-                    placeholder="Subject"
-                  ></input>
-                </p>
-                <p>
-                  <textarea
-                    id="message"
-                    name="your-message"
-                    placeholder="Message"
-                  ></textarea>
-                </p>
-                <p>
-                  <input
-                    type="submit"
-                    onclick="SendMail()"
-                    value="SEND"
-                    placeholder=""
-                  ></input>
-                </p>
+import { HiMiniArrowLongUp } from "react-icons/hi2";
+import { HiOutlineArrowLongDown } from "react-icons/hi2";
+function Contact() {
+  const [isPopupOpen, setIsPopupOpen] = useState(false);
+
+  const togglePopup = () => {
+    setIsPopupOpen(!isPopupOpen);
+  };
+
+  return (
+    <div className="Contact" id="Contact">
+      <h3>HAVE YOU PROJECT IN MIND</h3>
+      <div className="contact-heading">
+        <h1>
+          LET'S MAKE SOMETHING <br></br>GREAT TOGETHER !
+        </h1>
+      </div>
+      <button className="circular-button" onClick={togglePopup}>
+        <BsArrowUpRight className="arrow-icon" />
+        Contact
+      </button>
+
+      {isPopupOpen && (
+        <div id="popupContainer" className="popupContainer">
+          <div className="popupContent">
+            <span className="closeBtn" onClick={togglePopup}>
+              &times;
+            </span>
+            <h2>CONTACT FORM</h2>
+            <form id="registerForm">
+              <div class="form-group">
+                <input
+                  type="text"
+                  class="form-control"
+                  id="name"
+                  placeholder="Name"
+                ></input>
               </div>
-            </div>
+              <div class="form-group">
+                <input
+                  type="email"
+                  class="form-control"
+                  id="email"
+                  placeholder="Email"
+                ></input>
+              </div>
+              <div class="form-group">
+                <textarea
+                  type="text"
+                  class="form-control"
+                  id="message"
+                  placeholder="Message"
+                  rows="4"
+                ></textarea>
+              </div>
+
+              <button type="submit">Submit</button>
+            </form>
           </div>
         </div>
+      )}
+      <div>
+        <a href="#About">
+          <button className="vertical-line-container-2">
+            <HiMiniArrowLongUp className="arrow-down" />
+          </button>
+        </a>
       </div>
-      <iframe
-        src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3903.4821703077987!2d79.836468!3d11.941081999999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMTHCsDU2JzI3LjkiTiA3OcKwNTAnMTEuMyJF!5e0!3m2!1sen!2sin!4v1716347800148!5m2!1sen!2sin"
-        width="600"
-        height="450"
-        style="border:0;"
-        allowfullscreen=""
-        loading="lazy"
-        referrerpolicy="no-referrer-when-downgrade"
-      ></iframe>
     </div>
   );
 }
+
 export default Contact;
